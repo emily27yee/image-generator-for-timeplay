@@ -21,10 +21,10 @@ const ZONES = {
   photo: { x: 0.052, y: 0.275, w: 0.896, h: 0.407 },
 
   // Bottom stats bar — left cell (Team Name) — inside bar, right of people icon
-  teamName: { cx: 0.360, cy: 0.835 },
+  teamName: { cx: 0.360, cy: 0.800 },
 
   // Bottom stats bar — right cell (Total Points) — inside bar, right of "?" icon
-  totalPoints: { cx: 0.760, cy: 0.835 },
+  totalPoints: { cx: 0.760, cy: 0.800 },
 
   // Below bottom bar (Bar Name)
   barName: { cx: 0.500, cy: 0.950 },
