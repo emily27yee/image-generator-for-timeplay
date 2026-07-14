@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeopardy! Bar League — Winners Graphic Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-logo">JEOPARDY! Bar League</div>
+    <h1>Winners Graphic Generator</h1>
+    <p class="subtitle">Upload a winner photo, fill in the details, and download your social media graphic.</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls" aria-label="Graphic settings">
+
+      <!-- Photo Upload -->
+      <div class="control-group">
+        <label class="control-label">Winner Photo</label>
+        <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Upload winner photo — drag and drop or click to browse">
+          <input type="file" id="photo-input" accept="image/*" hidden aria-hidden="true">
+          <div class="drop-zone-icon" aria-hidden="true">📷</div>
+          <p class="drop-zone-text">Drag & drop a photo, or click to browse</p>
+          <p id="file-name" class="file-name" hidden></p>
+        </div>
+      </div>
+
+      <!-- Team Name -->
+      <div class="control-group">
+        <label class="control-label" for="team-name-input">Team Name</label>
+        <input
+          type="text"
+          id="team-name-input"
+          placeholder="e.g. The Quizmasters"
+          maxlength="40"
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- Total Points -->
+      <div class="control-group">
+        <label class="control-label" for="total-points-input">Total Points</label>
+        <input
+          type="text"
+          id="total-points-input"
+          placeholder="e.g. 2400"
+          maxlength="20"
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- Bar Name -->
+      <div class="control-group">
+        <label class="control-label" for="bar-name-input">Bar Name</label>
+        <input
+          type="text"
+          id="bar-name-input"
+          placeholder="e.g. The Crown & Anchor"
+          maxlength="50"
+          autocomplete="off"
+        >
+      </div>
+
+      <!-- Photo fit toggle -->
+      <div class="control-group">
+        <label class="control-label" for="photo-fit-select">Photo Fit</label>
+        <select id="photo-fit-select">
+          <option value="cover" selected>Fill (crop to fit)</option>
+          <option value="contain">Fit (show whole photo)</option>
+        </select>
+      </div>
+
+      <button id="generate-btn" class="generate-btn" disabled>
+        Generate Graphic
+      </button>
+
+      <button id="download-btn" class="download-btn" disabled>
+        ⬇ Download PNG
+      </button>
+
+      <p id="status-msg" class="status-msg" aria-live="polite"></p>
+    </section>
+
+    <section class="preview" aria-label="Preview">
+      <h2 class="preview-title">Preview</h2>
+      <div id="preview-container" class="preview-container">
+        <canvas id="preview-canvas" hidden></canvas>
+        <div id="preview-placeholder" class="preview-placeholder">
+          <span class="placeholder-icon" aria-hidden="true">🏆</span>
+          <p>Upload a photo and fill in the details to generate your graphic.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
